@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+
+
+class MyApp extends StatelessWidget {
+  var listTxt = ['b1', 'b2', 'b3'];
+  var listIdx = 1;
+
+  void whenPressButton() {
+    listIdx += 1;
+    print(listIdx);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    
+    return MaterialApp(
+        home: Scaffold(
+        appBar: AppBar(title: Text('Title')),
+        body: Column(
+        children: <Widget>[
+          Text(listTxt[listIdx]),
+          RaisedButton(
+            child: Text('b1'),
+            onPressed: whenPressButton,
+          ),
+          RaisedButton(
+            child: Text('b2'),
+            onPressed: () {
+              print('Hello there');
+            },
+          ),
+        ],
+      ),
+    ));
+  }
+}
+
+
+
